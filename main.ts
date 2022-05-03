@@ -1,6 +1,6 @@
 let Richtig = 0
+let Spielstand = 0
 input.onButtonPressed(Button.A, function () {
-    let Spielstand = 0
     Richtig = 1
     while (Richtig) {
         if (randint(0, 1) == 0) {
@@ -52,6 +52,7 @@ input.onButtonPressed(Button.A, function () {
                 # . . . #
                 . # # # .
                 `)
+            Spielstand += 1
         } else {
             basic.showLeds(`
                 . # . # .
@@ -64,6 +65,5 @@ input.onButtonPressed(Button.A, function () {
     }
     basic.pause(1000)
     basic.showString("Game Over! Punkte:")
-    basic.pause(1000)
     basic.showString("" + (Spielstand))
 })
